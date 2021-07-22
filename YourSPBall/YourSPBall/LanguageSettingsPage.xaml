@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YourSPBall.LanguageSettingsPage"  NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  >
+            <Image Source="bg_image.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"  />
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="50" >
+                <Image Source="flag_russia.png" HorizontalOptions="Center" VerticalOptions="Start" Aspect="AspectFit" />
+                <Image Source="flag_usa.png" HorizontalOptions="Center" VerticalOptions="Center" Aspect="AspectFit" />
+                <Image Source="flag_germany.png" HorizontalOptions="Center" VerticalOptions="End" Aspect="AspectFit" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

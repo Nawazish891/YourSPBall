@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YourSPBall.MainMenuPage" NavigationPage.HasNavigationBar="false" x:Name="this">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Image Source="bg_image.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"  />
+            <StackLayout BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="0,20" Spacing="20">
+                <Grid HorizontalOptions="Center" VerticalOptions="Start">
+                    <Image Source="rectangle_box.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"  />
+                    <Image Source="txt_new_ball.png" HorizontalOptions="Center" VerticalOptions="Center" Aspect="AspectFit"  />
+                    <!--<Label Text="CREATE NEW BALL" FontFamily="sans-serif" FontSize="26" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>-->
+                </Grid>
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Orientation="Horizontal" Spacing="20">
+                    <Image Source="btn_left.png" HorizontalOptions="Start" VerticalOptions="Center" Aspect="AspectFit"  />
+                    <!--<Image Source="square_box.png" HorizontalOptions="Center" VerticalOptions="Center" Aspect="AspectFit"  />-->
+                    <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source="square_box.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"  />
+                        <Image Source="ball_1.png" HorizontalOptions="Center" VerticalOptions="Center" Aspect="AspectFit"  >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NavigateToBallDetailCommand,Source={x:Reference this}}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <!--<Label Text="CREATE NEW BALL" FontFamily="sans-serif" FontSize="26" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>-->
+                    </Grid>
+
+                    <Image Source="btn_right.png" HorizontalOptions="End" VerticalOptions="Center" Aspect="AspectFit"  />
+                </StackLayout>
+
+                <StackLayout VerticalOptions="End" HorizontalOptions="CenterAndExpand" Spacing="130" Orientation="Horizontal">
+                    <Image Source="btn_lang.png" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Aspect="AspectFit"  >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToLangSettingsCommand,Source={x:Reference this}}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="btn_settings.png" HorizontalOptions="End" VerticalOptions="Center" Aspect="AspectFit"  >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToSettingsCommand,Source={x:Reference this}}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
