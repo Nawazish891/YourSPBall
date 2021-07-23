@@ -1,16 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="YourSPBall.MainMenuPage" NavigationPage.HasNavigationBar="false" x:Name="this">
+             x:Class="YourSPBall.MainMenuPage" NavigationPage.HasNavigationBar="false"
+             xmlns:resource="clr-namespace:YourSPBall.Resources"
+             x:Name="this">
     <ContentPage.Content>
         <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
-            <Image Source="bg_image.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"  />
-            <StackLayout BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="0,20" Spacing="20">
-                <Grid HorizontalOptions="Center" VerticalOptions="Start">
-                    <Image Source="rectangle_box.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"  />
-                    <Image Source="txt_new_ball.png" HorizontalOptions="Center" VerticalOptions="Center" Aspect="AspectFit"  />
-                    <!--<Label Text="CREATE NEW BALL" FontFamily="sans-serif" FontSize="26" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>-->
-                </Grid>
+            <Image Source="bg_image.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill"  />
+            <StackLayout BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="0,10" Spacing="20">
+                <Frame HorizontalOptions="Center" VerticalOptions="Center" Background="#667380" CornerRadius="25" Padding="10">
+                    <Frame HorizontalOptions="Center" VerticalOptions="Center" Background="#ffffff" CornerRadius="25">
+                        <Label Text="{x:Static resource:AppResources.CreateNewBall}" FontFamily="sans-serif" FontSize="26" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>
+                    </Frame>
+                </Frame>
                 <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Orientation="Horizontal" Spacing="20">
                     <Image Source="btn_left.png" HorizontalOptions="Start" VerticalOptions="Center" Aspect="AspectFit"  />
                     <!--<Image Source="square_box.png" HorizontalOptions="Center" VerticalOptions="Center" Aspect="AspectFit"  />-->

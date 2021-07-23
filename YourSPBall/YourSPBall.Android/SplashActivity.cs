@@ -33,7 +33,7 @@ namespace YourSPBall.Droid
         }
 
         // Simulates background work that happens behind the splash screen
-        async void SimulateStartup()
+        void SimulateStartup()
         {
             Log.Debug(TAG, "Startup work is finished - starting MainActivity.");
             StartActivity(new Intent(Application.Context, typeof(MainActivity)));

@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Globalization;
+using System.Threading;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using YourSPBall.Resources;
 
 namespace YourSPBall
 {
@@ -9,7 +12,8 @@ namespace YourSPBall
         public App()
         {
             InitializeComponent();
-
+            //Thread.CurrentThread.CurrentUICulture = new CultureInfo("de");
+            //AppResources.Culture = new CultureInfo("de");
             MainPage = new NavigationPage(new MainMenuPage());
         }
 
