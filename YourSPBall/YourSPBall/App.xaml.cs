@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Plugin.SimpleAudioPlayer;
+using System;
 using System.Globalization;
 using System.IO;
+using System.Reflection;
 using System.Threading;
 using Xamarin.Forms;
 using YourSPBall.DB;
@@ -28,7 +30,25 @@ namespace YourSPBall
             string langCode = App.Database.GetSettings().SelectedLanguageCode;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(langCode);
             AppResources.Culture = new CultureInfo(langCode);
+            ISimpleAudioPlayer player = CrossSimpleAudioPlayer.Current;
+            player.Load(GetStreamFromFile("background.mp3"));
+            player.Loop = true;
+            player.Play();
             MainPage = new NavigationPage(new MainMenuPage());
+        }
+
+        public static void IconClicked()
+        {
+            var player1 = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
+            player1.Load(GetStreamFromFile("buttonclick.mp3"));
+            player1.Loop = false;
+            player1.Play();
+        }
+        static Stream GetStreamFromFile(string filename)
+        {
+            var assembly = typeof(App).GetTypeInfo().Assembly;
+            var stream = assembly.GetManifestResourceStream("YourSPBall.Music." + filename);
+            return stream;
         }
 
         protected override void OnStart()

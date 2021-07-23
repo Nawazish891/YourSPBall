@@ -151,11 +151,5 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\btn_unmute.png" />
   </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Raw\background.mp3" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Raw\button_click.mp3" />
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

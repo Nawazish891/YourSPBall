@@ -27,6 +27,7 @@ namespace YourSPBall
             get
             {
                 return new Command<string>((param)=> {
+                    App.IconClicked();
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo(param);
                     AppResources.Culture = new CultureInfo(param);
                     _Settings.SelectedLanguageCode = param;

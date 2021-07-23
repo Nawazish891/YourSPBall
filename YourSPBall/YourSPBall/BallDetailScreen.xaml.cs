@@ -22,6 +22,7 @@ namespace YourSPBall
             get
             {
                 return new Command(() => {
+                    App.IconClicked();
                     this.Navigation.PopAsync();
                 });
             }
@@ -32,6 +33,7 @@ namespace YourSPBall
             get
             {
                 return new Command(() => {
+                    App.IconClicked();
                     this.Navigation.PushAsync(new EditBallInfoPage());
                 });
             }
@@ -42,6 +44,7 @@ namespace YourSPBall
             get
             {
                 return new Command(() => {
+                    App.IconClicked();
                     this.Navigation.PushAsync(new EditBallDrawingPage());
                 });
             }

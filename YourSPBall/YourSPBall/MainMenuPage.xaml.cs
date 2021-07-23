@@ -18,6 +18,7 @@ namespace YourSPBall
             {
                 return new Command(() =>
                 {
+                    App.IconClicked();
                     this.Navigation.PushAsync(new SettingsPage());
                 });
             }
@@ -29,6 +30,7 @@ namespace YourSPBall
             {
                 return new Command(() =>
                 {
+                    App.IconClicked();
                     this.Navigation.PushAsync(new LanguageSettingsPage());
                 });
             }
@@ -40,6 +42,7 @@ namespace YourSPBall
             {
                 return new Command(() =>
                 {
+                    App.IconClicked();
                     this.Navigation.PushAsync(new BallDetailScreen());
                 });
             }
@@ -50,6 +53,7 @@ namespace YourSPBall
             {
                 return new Command(() =>
                 {
+                    App.IconClicked();
                     this.Navigation.PushAsync(new EditBallDrawingPage());
                 });
             }

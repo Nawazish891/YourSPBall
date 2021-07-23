@@ -38,6 +38,7 @@ namespace YourSPBall
             get
             {
                 return new Command(()=> {
+                    App.IconClicked();
                     this.Navigation.PopAsync();
                 });
             }
@@ -47,6 +48,7 @@ namespace YourSPBall
             get
             {
                 return new Command(() => {
+                    App.IconClicked();
                     Settings.MuteSound = !Settings.MuteSound;
                     App.Database.SaveSettingsAsync(Settings).Wait();
                     Settings = App.Database.GetSettings();
