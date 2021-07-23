@@ -4,7 +4,7 @@
              x:Class="YourSPBall.LanguageSettingsPage"  NavigationPage.HasNavigationBar="false" x:Name="this" >
     <ContentPage.Content>
         <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  >
-            <Image Source="bg_image.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"  />
+            <Image Source="bg_image.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill"  />
             <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="50" >
                 <Image Source="flag_russia.png" HorizontalOptions="Center" VerticalOptions="Start" Aspect="AspectFit" >
                     <Image.GestureRecognizers>

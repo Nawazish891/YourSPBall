@@ -6,38 +6,38 @@
              x:Name="this">
     <ContentPage.Content>
         <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  >
-            <Image Source="bg_image.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"  />
-            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0,20" Spacing="20" >
-                <Image Margin="30,30" Source="btn_back.png" HorizontalOptions="Start" VerticalOptions="Start" Aspect="AspectFit" >
+            <Image Source="bg_image.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill"  />
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0,20" Spacing="0" >
+                <Image Margin="30,30,0,0" Source="btn_back.png" HorizontalOptions="Start" VerticalOptions="Start" Aspect="AspectFit" >
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding BackCommand,Source={x:Reference this}}"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Center" Spacing="20">
+                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Center" Spacing="30">
                     <Image Source="ball_1_big.png" HorizontalOptions="Center" VerticalOptions="Start" Aspect="AspectFit"  />
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="FillAndExpand" Spacing="50" >
-                        <Grid HorizontalOptions="Start" VerticalOptions="Center" >
-                            <Frame HorizontalOptions="Center" VerticalOptions="Center" Background="#667380" CornerRadius="25" Padding="10">
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding NavigateToEditCommand,Source={x:Reference this}}"/>
-                                </Frame.GestureRecognizers>
-                                <Frame HorizontalOptions="Center" VerticalOptions="Center" Background="#ffffff" CornerRadius="25">
-                                    <Label Text="{x:Static resource:AppResources.EditInfo}" FontFamily="sans-serif" FontSize="26" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>
-                                </Frame>
+                    <Grid HorizontalOptions="Center" VerticalOptions="FillAndExpand" ColumnSpacing="50" Margin="30,5" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Background="#667380" CornerRadius="25" Padding="10">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NavigateToEditCommand,Source={x:Reference this}}"/>
+                            </Frame.GestureRecognizers>
+                            <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Background="#ffffff" CornerRadius="25">
+                                <Label Text="{x:Static resource:AppResources.EditInfo}" FontFamily="sans-serif" FontSize="25" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>
                             </Frame>
-                        </Grid>
+                        </Frame>
 
-                        <Grid HorizontalOptions="End" VerticalOptions="Center">
-                            <Frame HorizontalOptions="Center" VerticalOptions="Center" Background="#667380" CornerRadius="25" Padding="10">
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding NavigateToEditDrawingCommand,Source={x:Reference this}}"/>
-                                </Frame.GestureRecognizers>
-                                <Frame HorizontalOptions="Center" VerticalOptions="Center" Background="#ffffff" CornerRadius="25">
-                                    <Label Text="{x:Static resource:AppResources.EditDrawing}" FontFamily="sans-serif" FontSize="26" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>
-                                </Frame>
+                        <Frame Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Background="#667380" CornerRadius="25" Padding="10">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NavigateToEditDrawingCommand,Source={x:Reference this}}"/>
+                            </Frame.GestureRecognizers>
+                            <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Background="#ffffff" CornerRadius="25">
+                                <Label Text="{x:Static resource:AppResources.EditDrawing}" FontFamily="sans-serif" FontSize="25" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>
                             </Frame>
-                        </Grid>
-                    </StackLayout>
+                        </Frame>
+                    </Grid>
                 </StackLayout>
             </StackLayout>
         </Grid>

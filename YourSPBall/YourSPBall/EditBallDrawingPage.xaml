@@ -4,16 +4,16 @@
              x:Class="YourSPBall.EditBallDrawingPage"  NavigationPage.HasNavigationBar="false" x:Name="this">
     <ContentPage.Content>
         <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  >
-            <Image Source="bg_image.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"  />
+            <Image Source="bg_image.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill"  />
             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0,20" Spacing="20" >
                 <Image Margin="30,30" Source="btn_camera.png" HorizontalOptions="Center" VerticalOptions="Start" Aspect="AspectFit" >
                 </Image>
                 <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Center" Spacing="20">
                     <Image Source="ball_1_big.png" HorizontalOptions="Center" VerticalOptions="Start" Aspect="AspectFit"  />
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="FillAndExpand" Spacing="200">
+                    <Grid  HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" ColumnSpacing="150" >
                         <Image Source="btn_cross.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"  />
-                        <Image Source="btn_check.png" HorizontalOptions="End" VerticalOptions="FillAndExpand" Aspect="AspectFit"  />
-                    </StackLayout>
+                        <Image Grid.Column="1" Source="btn_check.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"  />
+                    </Grid>
                 </StackLayout>
             </StackLayout>
         </Grid>

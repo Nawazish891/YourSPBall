@@ -9,23 +9,24 @@
             <Image Source="bg_image.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill"  />
             <StackLayout BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="0,10" Spacing="20">
                 <Frame HorizontalOptions="Center" VerticalOptions="Center" Background="#667380" CornerRadius="25" Padding="10">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavigateToBallDrawingCommand,Source={x:Reference this}}"/>
+                    </Frame.GestureRecognizers>
                     <Frame HorizontalOptions="Center" VerticalOptions="Center" Background="#ffffff" CornerRadius="25">
-                        <Label Text="{x:Static resource:AppResources.CreateNewBall}" FontFamily="sans-serif" FontSize="26" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>
+                        <Label Text="{x:Static resource:AppResources.CreateNewBall}" FontFamily="sans-serif" FontSize="25" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>
                     </Frame>
                 </Frame>
                 <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Orientation="Horizontal" Spacing="20">
                     <Image Source="btn_left.png" HorizontalOptions="Start" VerticalOptions="Center" Aspect="AspectFit"  />
-                    <!--<Image Source="square_box.png" HorizontalOptions="Center" VerticalOptions="Center" Aspect="AspectFit"  />-->
-                    <Grid HorizontalOptions="Center" VerticalOptions="Center">
-                        <Image Source="square_box.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"  />
-                        <Image Source="ball_1.png" HorizontalOptions="Center" VerticalOptions="Center" Aspect="AspectFit"  >
-                            <Image.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding NavigateToBallDetailCommand,Source={x:Reference this}}"/>
-                            </Image.GestureRecognizers>
-                        </Image>
-                        <!--<Label Text="CREATE NEW BALL" FontFamily="sans-serif" FontSize="26" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>-->
-                    </Grid>
-
+                    <Frame HorizontalOptions="Center" VerticalOptions="Center" Background="#667380" CornerRadius="25" Padding="10">
+                        <Frame HorizontalOptions="Center" VerticalOptions="Center" Background="#ffffff" CornerRadius="25">
+                            <Image Source="ball_1.png" HorizontalOptions="Center" VerticalOptions="Center" Aspect="AspectFit"  >
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding NavigateToBallDetailCommand,Source={x:Reference this}}"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </Frame>
+                    </Frame>
                     <Image Source="btn_right.png" HorizontalOptions="End" VerticalOptions="Center" Aspect="AspectFit"  />
                 </StackLayout>
 

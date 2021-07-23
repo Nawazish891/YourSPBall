@@ -44,6 +44,15 @@ namespace YourSPBall
                 });
             }
         }
-
+        public Command NavigateToBallDrawingCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    this.Navigation.PushAsync(new EditBallDrawingPage());
+                });
+            }
+        }
     }
 }
