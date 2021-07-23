@@ -7,6 +7,9 @@
             <Image Source="bg_image.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="Fill"  />
             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0,20" Spacing="20" >
                 <Image Margin="30,30" Source="btn_camera.png" HorizontalOptions="Center" VerticalOptions="Start" Aspect="AspectFit" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding PickImageCommand,Source={x:Reference this}}"/>
+                    </Image.GestureRecognizers>
                 </Image>
                 <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Center" Spacing="20">
                     <Image Source="ball_1_big.png" HorizontalOptions="Center" VerticalOptions="Start" Aspect="AspectFit"  />

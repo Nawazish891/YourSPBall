@@ -116,4 +116,10 @@
   <data name="YouMadeYourOwnSPBall" xml:space="preserve">
     <value>DU HAST DEINEN EIGENEN SP BALL HERGESTELLT!</value>
   </data>
+  <data name="TakeAPicture" xml:space="preserve">
+    <value>Take a Picture</value>
+  </data>
+  <data name="ChooseFromLibrary" xml:space="preserve">
+    <value>Machen Sie ein Foto</value>
+  </data>
 </root>

@@ -61,6 +61,15 @@ namespace YourSPBall.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose from Library.
+        /// </summary>
+        internal static string ChooseFromLibrary {
+            get {
+                return ResourceManager.GetString("ChooseFromLibrary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CREATE NEW BALL.
         /// </summary>
         internal static string CreateNewBall {
@@ -102,6 +111,15 @@ namespace YourSPBall.Resources {
         internal static string SportType {
             get {
                 return ResourceManager.GetString("SportType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Take a Picture.
+        /// </summary>
+        internal static string TakeAPicture {
+            get {
+                return ResourceManager.GetString("TakeAPicture", resourceCulture);
             }
         }
         

@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ChooseFromLibrary" xml:space="preserve">
+    <value>Choose from Library</value>
+  </data>
   <data name="CreateNewBall" xml:space="preserve">
     <value>CREATE NEW BALL</value>
   </data>
@@ -131,6 +134,9 @@
   </data>
   <data name="SportType" xml:space="preserve">
     <value>WHAT'S THE SPORT TYPE?</value>
+  </data>
+  <data name="TakeAPicture" xml:space="preserve">
+    <value>Take a Picture</value>
   </data>
   <data name="YouMadeYourOwnSPBall" xml:space="preserve">
     <value>YOU MADE YOUR OWN SP BALL!</value>

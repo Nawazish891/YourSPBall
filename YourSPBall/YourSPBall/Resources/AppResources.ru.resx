@@ -116,4 +116,10 @@
   <data name="YouMadeYourOwnSPBall" xml:space="preserve">
     <value>ВЫ СДЕЛАЛИ СОБСТВЕННЫЙ ШАР!</value>
   </data>
+ <data name="TakeAPicture" xml:space="preserve">
+    <value>Сделать фото</value>
+  </data>
+  <data name="ChooseFromLibrary" xml:space="preserve">
+    <value>Выбрать из библиотеки</value>
+  </data>
 </root>
