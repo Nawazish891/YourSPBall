@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.SimpleAudioPlayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -52,6 +53,12 @@ namespace YourSPBall
                     Settings.MuteSound = !Settings.MuteSound;
                     App.Database.SaveSettingsAsync(Settings).Wait();
                     Settings = App.Database.GetSettings();
+                    ISimpleAudioPlayer player = CrossSimpleAudioPlayer.Current;
+                    App.MuteSound = Settings.MuteSound;
+                    if (Settings.MuteSound)
+                        player.Pause();
+                    else
+                        player.Play();
                 });
             }
         }

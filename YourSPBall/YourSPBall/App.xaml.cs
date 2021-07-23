@@ -24,21 +24,30 @@ namespace YourSPBall
                 return database;
             }
         }
+
+        public static bool MuteSound;
         public App()
         {
             InitializeComponent();
             string langCode = App.Database.GetSettings().SelectedLanguageCode;
+            MuteSound = App.Database.GetSettings().MuteSound;
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(langCode);
             AppResources.Culture = new CultureInfo(langCode);
             ISimpleAudioPlayer player = CrossSimpleAudioPlayer.Current;
             player.Load(GetStreamFromFile("background.mp3"));
             player.Loop = true;
             player.Play();
+
+            if (MuteSound)
+                player.Pause();
             MainPage = new NavigationPage(new MainMenuPage());
         }
 
         public static void IconClicked()
         {
+            if (MuteSound)
+                return;
+
             var player1 = CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
             player1.Load(GetStreamFromFile("buttonclick.mp3"));
             player1.Loop = false;
