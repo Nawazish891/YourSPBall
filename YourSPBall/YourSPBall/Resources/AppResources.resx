@@ -132,14 +132,26 @@
   <data name="EditInfo" xml:space="preserve">
     <value>EDIT INFO</value>
   </data>
+  <data name="EnterName" xml:space="preserve">
+    <value>Please enter Name</value>
+  </data>
+  <data name="EnterSportType" xml:space="preserve">
+    <value>Please enter Sport Type</value>
+  </data>
   <data name="GiveItAName" xml:space="preserve">
     <value>GIVE IT A NAME</value>
+  </data>
+  <data name="NameField" xml:space="preserve">
+    <value>Name</value>
   </data>
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>
   <data name="SportType" xml:space="preserve">
     <value>WHAT'S THE SPORT TYPE?</value>
+  </data>
+  <data name="SportTypeField" xml:space="preserve">
+    <value>Sport Type</value>
   </data>
   <data name="TakeAPicture" xml:space="preserve">
     <value>Take a Picture</value>

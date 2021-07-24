@@ -150,4 +150,16 @@
   <data name="No" xml:space="preserve">
     <value>Nein</value>
   </data>
+  <data name="EnterName" xml:space="preserve">
+    <value>Bitte Name eingeben</value>
+  </data>
+  <data name="EnterSportType" xml:space="preserve">
+    <value>Bitte Sportart eingeben</value>
+  </data>
+  <data name="NameField" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="SportTypeField" xml:space="preserve">
+    <value>Sportart</value>
+  </data>
 </root>

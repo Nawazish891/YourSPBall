@@ -11,14 +11,17 @@ namespace YourSPBall
         public EditBallDrawingPage(SPBall spBall = null)
         {
             InitializeComponent();
-            
-            if(spBall == null)
+
+            if (spBall == null)
                 spBall = new SPBall();
 
             SPBall = spBall;
             PreviousSPBall = new SPBall()
             {
+                ID = SPBall.ID,
                 ImageURL = SPBall.ImageURL,
+                Name = SPBall.Name,
+                SportType = SPBall.SportType
             };
         }
         #endregion
@@ -59,7 +62,8 @@ namespace YourSPBall
         {
             get
             {
-                return new Command(async () => {
+                return new Command(async () =>
+                {
                     App.IconClicked();
                     await new YourSPBall.ImageCropper.ImageCropper()
                     {
@@ -70,7 +74,7 @@ namespace YourSPBall
                         {
                             Device.BeginInvokeOnMainThread(() =>
                             {
-                                SPBall.ImageURL = imageFile;
+                                PreviousSPBall.ImageURL = imageFile;
                             });
                         }
                     }.Show(this);
@@ -81,9 +85,10 @@ namespace YourSPBall
         {
             get
             {
-                return new Command(() => {
+                return new Command(() =>
+                {
                     App.IconClicked();
-                    
+
                 });
             }
         }
@@ -92,9 +97,13 @@ namespace YourSPBall
         {
             get
             {
-                return new Command(() => {
+                return new Command(() =>
+                {
                     App.IconClicked();
-                    App.Database.DeleteSPBall(SPBall);
+                    
+                    if (SPBall.ID > 0)
+                        App.Database.DeleteSPBall(SPBall);
+
                     App.Current.MainPage = new NavigationPage(new MainMenuPage());
                 });
             }
@@ -104,10 +113,11 @@ namespace YourSPBall
         {
             get
             {
-                return new Command(() => {
+                return new Command(() =>
+                {
                     App.IconClicked();
-                    App.Database.SaveSPBallAsync(SPBall);
-                    this.Navigation.PopAsync();
+                    App.Database.SaveSPBallAsync(PreviousSPBall);
+                    this.Navigation.PushAsync(new EditBallInfoPage(PreviousSPBall));
                 });
             }
         }

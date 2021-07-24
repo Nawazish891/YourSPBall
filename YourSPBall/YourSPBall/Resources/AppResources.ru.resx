@@ -131,4 +131,16 @@
   <data name="No" xml:space="preserve">
     <value>Нет</value>
   </data>
+  <data name="EnterName" xml:space="preserve">
+    <value>Пожалуйста, введите имя</value>
+  </data>
+  <data name="EnterSportType" xml:space="preserve">
+    <value>Пожалуйста, введите вид спорта</value>
+  </data>
+  <data name="NameField" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="SportTypeField" xml:space="preserve">
+    <value>Тип спорта</value>
+  </data>
 </root>

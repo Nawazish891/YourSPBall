@@ -106,11 +106,38 @@ namespace YourSPBall.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please enter Name.
+        /// </summary>
+        internal static string EnterName {
+            get {
+                return ResourceManager.GetString("EnterName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter Sport Type.
+        /// </summary>
+        internal static string EnterSportType {
+            get {
+                return ResourceManager.GetString("EnterSportType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to GIVE IT A NAME.
         /// </summary>
         internal static string GiveItAName {
             get {
                 return ResourceManager.GetString("GiveItAName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string NameField {
+            get {
+                return ResourceManager.GetString("NameField", resourceCulture);
             }
         }
         
@@ -129,6 +156,15 @@ namespace YourSPBall.Resources {
         internal static string SportType {
             get {
                 return ResourceManager.GetString("SportType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sport Type.
+        /// </summary>
+        internal static string SportTypeField {
+            get {
+                return ResourceManager.GetString("SportTypeField", resourceCulture);
             }
         }
         

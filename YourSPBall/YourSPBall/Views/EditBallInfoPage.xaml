@@ -11,23 +11,36 @@
                 <Label Margin="30,30" Text="{x:Static resource:AppResources.YouMadeYourOwnSPBall}" TextColor="White" HorizontalOptions="Center" VerticalOptions="Start" FontSize="26" >
                 </Label>
                 <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Center" Spacing="10" Margin="30,0">
-                    <Frame Padding="0" IsClippedToBounds="True" HeightRequest="165" WidthRequest="165" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" CornerRadius="80" HasShadow="False" BackgroundColor="Transparent" Background="Transparent" >
+                    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Frame Padding="0" IsClippedToBounds="True" HeightRequest="165" WidthRequest="165" HorizontalOptions="Center" VerticalOptions="Center" CornerRadius="80" HasShadow="False" BackgroundColor="Transparent" Background="Transparent" >
                         <Image x:Name="imgView" Source="{Binding SPBall.ImageURL, Source={x:Reference this}}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit" />
                     </Frame>
+                    <Image  Source="btn_check.png" HorizontalOptions="End" VerticalOptions="Center" Aspect="AspectFit" Margin="0,0,20,0">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SaveSPBallCommand,Source={x:Reference this}}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    </Grid>
                     <Grid HorizontalOptions="Center" VerticalOptions="FillAndExpand" ColumnSpacing="50">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Background="#667380" CornerRadius="25" Padding="10">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding EditInfoCommand, Source={x:Reference this}}" CommandParameter="Name"/>
+                            </Frame.GestureRecognizers> 
                             <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Background="#ffffff" CornerRadius="25" Padding="10">
-                                <Label Text="{x:Static resource:AppResources.GiveItAName}" FontFamily="sans-serif" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>
+                                <Label Text="{Binding Name, Source={x:Reference this}}" FontFamily="sans-serif" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>
                             </Frame>
                         </Frame>
 
                         <Frame Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Background="#667380" CornerRadius="25" Padding="10">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding EditInfoCommand, Source={x:Reference this}}" CommandParameter="SportType"/>
+                            </Frame.GestureRecognizers>
                             <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Background="#ffffff" CornerRadius="25" Padding="10">
-                                <Label Text="{x:Static resource:AppResources.SportType}" FontFamily="sans-serif" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>
+                                <Label Text="{Binding SportType, Source={x:Reference this}}" FontFamily="sans-serif" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>
                             </Frame>
                         </Frame>
                     </Grid>
