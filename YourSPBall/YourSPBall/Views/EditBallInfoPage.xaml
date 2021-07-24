@@ -11,7 +11,9 @@
                 <Label Margin="30,30" Text="{x:Static resource:AppResources.YouMadeYourOwnSPBall}" TextColor="White" HorizontalOptions="Center" VerticalOptions="Start" FontSize="26" >
                 </Label>
                 <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Center" Spacing="10" Margin="30,0">
-                    <Image Source="ball_1_big.png" HorizontalOptions="Center" VerticalOptions="Start" Aspect="AspectFit"/>
+                    <Frame Padding="0" IsClippedToBounds="True" HeightRequest="165" WidthRequest="165" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" CornerRadius="80" HasShadow="False" BackgroundColor="Transparent" Background="Transparent" >
+                        <Image x:Name="imgView" Source="{Binding SPBall.ImageURL, Source={x:Reference this}}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit" />
+                    </Frame>
                     <Grid HorizontalOptions="Center" VerticalOptions="FillAndExpand" ColumnSpacing="50">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -19,13 +21,13 @@
                         </Grid.ColumnDefinitions>
                         <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Background="#667380" CornerRadius="25" Padding="10">
                             <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Background="#ffffff" CornerRadius="25" Padding="10">
-                                <Label Text="{x:Static resource:AppResources.GiveItAName}" FontFamily="sans-serif" FontSize="25" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>
+                                <Label Text="{x:Static resource:AppResources.GiveItAName}" FontFamily="sans-serif" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>
                             </Frame>
                         </Frame>
 
                         <Frame Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Background="#667380" CornerRadius="25" Padding="10">
                             <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Background="#ffffff" CornerRadius="25" Padding="10">
-                                <Label Text="{x:Static resource:AppResources.SportType}" FontFamily="sans-serif" FontSize="25" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>
+                                <Label Text="{x:Static resource:AppResources.SportType}" FontFamily="sans-serif" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>
                             </Frame>
                         </Frame>
                     </Grid>

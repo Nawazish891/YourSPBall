@@ -17,7 +17,11 @@
                             <TapGestureRecognizer Command="{Binding MuteUnmuteCommand,Source={x:Reference this}}"/>
                         </Image.GestureRecognizers>
                     </Image>
-                    <Image Source="btn_delete.png" HorizontalOptions="Center" VerticalOptions="End" Aspect="AspectFit"  />
+                    <Image Source="btn_delete.png" HorizontalOptions="Center" VerticalOptions="End" Aspect="AspectFit">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding DeleteDataCommand,Source={x:Reference this}}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
                 </StackLayout>
             </StackLayout>
         </Grid>

@@ -12,15 +12,26 @@
                     </Image.GestureRecognizers>
                 </Image>
                 <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Center" Spacing="0" >
-                    <Frame Padding="0" IsClippedToBounds="True" HeightRequest="170" WidthRequest="170" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" CornerRadius="85" HasShadow="False" Background="Black">
-                        <Image x:Name="imgView" Source="https://i.picsum.photos/id/496/200/200.jpg?hmac=Asy6Q8R1Y6wu0nrV_ymC5JGqktniSVnGqoYvNcHdzBI" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit" />
+                    <Frame Padding="0" IsClippedToBounds="True" HeightRequest="170" WidthRequest="170" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" CornerRadius="85" HasShadow="False" BackgroundColor="Transparent" Background="Transparent" >
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="2" Command="{Binding PaintImageCommand,Source={x:Reference this}}"/>
+                        </Frame.GestureRecognizers>
+                        <Image x:Name="imgView" Source="{Binding PreviousSPBall.ImageURL, Source={x:Reference this}}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit" />
                     </Frame>
                     <Grid  HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" ColumnSpacing="150" >
-                        <Image Source="btn_cross.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"  />
-                        <Image Grid.Column="1" Source="btn_check.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"  />
+                        <Image Source="btn_cross.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ClearPaintCommand,Source={x:Reference this}}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Image Grid.Column="1" Source="btn_check.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit"  >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SaveSPBallCommand,Source={x:Reference this}}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
                     </Grid>
                 </StackLayout>
             </StackLayout>
         </Grid>
     </ContentPage.Content>
-</ContentPage>
+</ContentPage>  

@@ -15,6 +15,7 @@ namespace YourSPBall.DB
         {
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<UserSettings>().Wait();
+            _database.CreateTableAsync<SPBall>().Wait();
         }
 
         /// <summary>
@@ -38,10 +39,53 @@ namespace YourSPBall.DB
         /// <returns></returns>
         public Task<int> SaveSettingsAsync(UserSettings settings)
         {
-            if(settings.ID != 0)
+            if (settings.ID != 0)
                 return _database.UpdateAsync(settings);
 
             return _database.InsertAsync(settings);
+        }
+
+        /// <summary>
+        /// Get all SpBalls user has created
+        /// </summary>
+        /// <returns></returns>
+        public Task<List<SPBall>> GetAllSPBalls()
+        {
+            return _database.Table<SPBall>().ToListAsync();
+        }
+
+
+        /// <summary>
+        /// Insert or Update SPBall based on ID
+        /// </summary>
+        /// <param name="spBall"></param>
+        /// <returns></returns>
+        public Task<int> SaveSPBallAsync(SPBall spBall)
+        {
+            if (spBall.ID != 0)
+                return _database.UpdateAsync(spBall);
+
+            return _database.InsertAsync(spBall);
+        }
+
+        /// <summary>
+        /// Delete All SpBalls
+        /// </summary>
+        /// <returns></returns>
+        public Task<int> DeleteAllSPBalls()
+        {
+            return _database.DeleteAllAsync<SPBall>();
+        }
+
+
+        /// <summary>
+        /// Delete SpBall
+        /// </summary>
+        /// <param name="spBall"></param>
+        /// <returns></returns>
+        public Task<int> DeleteSPBall(SPBall spBall)
+        {
+            return _database.DeleteAsync<SPBall>(spBall.ID);
         }
     }
 

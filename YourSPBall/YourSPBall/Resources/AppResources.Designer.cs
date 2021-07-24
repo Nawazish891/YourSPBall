@@ -79,6 +79,15 @@ namespace YourSPBall.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete all data about the created balls?.
+        /// </summary>
+        internal static string DeleteDataMsg {
+            get {
+                return ResourceManager.GetString("DeleteDataMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to EDIT DRAWING.
         /// </summary>
         internal static string EditDrawing {
@@ -106,6 +115,15 @@ namespace YourSPBall.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        internal static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to WHAT&apos;S THE SPORT TYPE?.
         /// </summary>
         internal static string SportType {
@@ -120,6 +138,15 @@ namespace YourSPBall.Resources {
         internal static string TakeAPicture {
             get {
                 return ResourceManager.GetString("TakeAPicture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        internal static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
         

@@ -123,6 +123,9 @@
   <data name="CreateNewBall" xml:space="preserve">
     <value>CREATE NEW BALL</value>
   </data>
+  <data name="DeleteDataMsg" xml:space="preserve">
+    <value>Are you sure you want to delete all data about the created balls?</value>
+  </data>
   <data name="EditDrawing" xml:space="preserve">
     <value>EDIT DRAWING</value>
   </data>
@@ -132,11 +135,17 @@
   <data name="GiveItAName" xml:space="preserve">
     <value>GIVE IT A NAME</value>
   </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
   <data name="SportType" xml:space="preserve">
     <value>WHAT'S THE SPORT TYPE?</value>
   </data>
   <data name="TakeAPicture" xml:space="preserve">
     <value>Take a Picture</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
   </data>
   <data name="YouMadeYourOwnSPBall" xml:space="preserve">
     <value>YOU MADE YOUR OWN SP BALL!</value>

@@ -8,12 +8,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using YourSPBall.Models;
+using YourSPBall.Resources;
 
 namespace YourSPBall
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SettingsPage : ContentPage
     {
+        #region ----Properties----
         private UserSettings _Settings;
         public UserSettings Settings
         {
@@ -27,18 +29,23 @@ namespace YourSPBall
                 OnPropertyChanged(nameof(Settings));
             }
         }
+        #endregion
 
+        #region ----Ctor----
         public SettingsPage()
         {
             InitializeComponent();
             Settings = App.Database.GetSettings();
         }
+        #endregion
 
+        #region ----Commands----
         public Command BackCommand
         {
             get
             {
-                return new Command(()=> {
+                return new Command(() =>
+                {
                     App.IconClicked();
                     this.Navigation.PopAsync();
                 });
@@ -48,7 +55,8 @@ namespace YourSPBall
         {
             get
             {
-                return new Command(() => {
+                return new Command(() =>
+                {
                     App.IconClicked();
                     Settings.MuteSound = !Settings.MuteSound;
                     App.Database.SaveSettingsAsync(Settings).Wait();
@@ -62,5 +70,21 @@ namespace YourSPBall
                 });
             }
         }
+
+        public Command DeleteDataCommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    App.IconClicked();
+                    string action = await DisplayActionSheet(AppResources.DeleteDataMsg, null, null, new string[] { AppResources.No,AppResources.Yes});
+
+                    if (action == AppResources.Yes)
+                        await App.Database.DeleteAllSPBalls();
+                });
+            }
+        }
+        #endregion
     }
 }

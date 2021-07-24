@@ -13,21 +13,30 @@
                         <TapGestureRecognizer Command="{Binding NavigateToBallDrawingCommand,Source={x:Reference this}}"/>
                     </Frame.GestureRecognizers>
                     <Frame HorizontalOptions="Center" VerticalOptions="Center" Background="#ffffff" CornerRadius="25">
-                        <Label Text="{x:Static resource:AppResources.CreateNewBall}" FontFamily="sans-serif" FontSize="25" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>
+                        <Label Text="{x:Static resource:AppResources.CreateNewBall}" FontFamily="sans-serif" FontSize="20" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  FontAttributes="Bold" TextColor="Black"/>
                     </Frame>
                 </Frame>
                 <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Orientation="Horizontal" Spacing="20">
-                    <Image Source="btn_left.png" HorizontalOptions="Start" VerticalOptions="Center" Aspect="AspectFit"  />
-                    <Frame HorizontalOptions="Center" VerticalOptions="Center" Background="#667380" CornerRadius="25" Padding="10">
-                        <Frame HorizontalOptions="Center" VerticalOptions="Center" Background="#ffffff" CornerRadius="25">
-                            <Image Source="ball_1.png" HorizontalOptions="Center" VerticalOptions="Center" Aspect="AspectFit"  >
-                                <Image.GestureRecognizers>
+                    <Image Source="btn_left.png" HorizontalOptions="Start" VerticalOptions="Center" Aspect="AspectFit"  >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChangeBall,Source={x:Reference this}}" CommandParameter="Previous"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Frame HorizontalOptions="Center" VerticalOptions="Center" Background="#667380" CornerRadius="25" Padding="10" HeightRequest="125" WidthRequest="125">
+                        <Frame HorizontalOptions="Center" VerticalOptions="Center" Background="#ffffff" CornerRadius="25"  HeightRequest="125" WidthRequest="125">
+                            <Frame Padding="0" IsClippedToBounds="True" HeightRequest="170" WidthRequest="170" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" CornerRadius="85" HasShadow="False" BackgroundColor="Transparent" Background="Transparent" >
+                                <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding NavigateToBallDetailCommand,Source={x:Reference this}}"/>
-                                </Image.GestureRecognizers>
-                            </Image>
+                                </Frame.GestureRecognizers>
+                                <Image x:Name="imgView" Source="{Binding CurrentBall.ImageURL, Source={x:Reference this}}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit" />
+                            </Frame>
                         </Frame>
                     </Frame>
-                    <Image Source="btn_right.png" HorizontalOptions="End" VerticalOptions="Center" Aspect="AspectFit"  />
+                    <Image Source="btn_right.png" HorizontalOptions="End" VerticalOptions="Center" Aspect="AspectFit" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChangeBall,Source={x:Reference this}}" CommandParameter="Next"/>
+                        </Image.GestureRecognizers>
+                    </Image>
                 </StackLayout>
 
                 <StackLayout VerticalOptions="End" HorizontalOptions="CenterAndExpand" Spacing="130" Orientation="Horizontal">

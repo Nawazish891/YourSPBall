@@ -122,4 +122,13 @@
   <data name="ChooseFromLibrary" xml:space="preserve">
     <value>Выбрать из библиотеки</value>
   </data>
+  <data name="DeleteDataMsg" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить все данные о созданных шарах?</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>да</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Нет</value>
+  </data>
 </root>
