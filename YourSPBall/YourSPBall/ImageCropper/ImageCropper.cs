@@ -69,7 +69,7 @@ namespace YourSPBall.ImageCropper
             if (imageFile == null)
             {
                 await CrossMedia.Current.Initialize();
-                string action = await page.DisplayActionSheet("YourSPBall", "Cancel", null, new string[] { AppResources.TakeAPicture, AppResources.ChooseFromLibrary });
+                string action = await page.DisplayActionSheet("YourSPBall", AppResources.Cancel, null, new string[] { AppResources.TakeAPicture, AppResources.ChooseFromLibrary });
                 if (action == AppResources.TakeAPicture)
                 {
                     if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)

@@ -162,4 +162,19 @@
   <data name="SportTypeField" xml:space="preserve">
     <value>Sportart</value>
   </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>stornieren</value>
+  </data>
+  <data name="DeleteSuccessfull" xml:space="preserve">
+    <value>Der aktuelle Ball wurde erfolgreich gelöscht.</value>
+  </data>
+  <data name="DeleteAllSuccessfull" xml:space="preserve">
+    <value>Alle erstellten Bälle werden gelöscht.</value>
+  </data>
+  <data name="DeleteBallMsg" xml:space="preserve">
+    <value>Möchten Sie diesen Ball wirklich löschen?</value>
+  </data>
 </root>

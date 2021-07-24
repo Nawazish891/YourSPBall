@@ -66,10 +66,16 @@ namespace YourSPBall
 
         protected override void OnSleep()
         {
+            ISimpleAudioPlayer player = CrossSimpleAudioPlayer.Current;
+            player.Pause();
         }
 
         protected override void OnResume()
         {
+            ISimpleAudioPlayer player = CrossSimpleAudioPlayer.Current;
+
+            if (!MuteSound)
+                player.Play();
         }
     }
 }

@@ -143,4 +143,19 @@
   <data name="SportTypeField" xml:space="preserve">
     <value>Тип спорта</value>
   </data>
+  <data name="OK" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>отменить</value>
+  </data>
+  <data name="DeleteSuccessfull" xml:space="preserve">
+    <value>Текущий мяч успешно удален.</value>
+  </data>
+  <data name="DeleteAllSuccessfull" xml:space="preserve">
+    <value>Все созданные шары удаляются.</value>
+  </data>
+  <data name="DeleteBallMsg" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить этот мяч?</value>
+  </data>
 </root>

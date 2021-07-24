@@ -61,6 +61,15 @@ namespace YourSPBall.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Choose from Library.
         /// </summary>
         internal static string ChooseFromLibrary {
@@ -79,11 +88,38 @@ namespace YourSPBall.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All created Balls are deleted..
+        /// </summary>
+        internal static string DeleteAllSuccessfull {
+            get {
+                return ResourceManager.GetString("DeleteAllSuccessfull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete this ball?.
+        /// </summary>
+        internal static string DeleteBallMsg {
+            get {
+                return ResourceManager.GetString("DeleteBallMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to delete all data about the created balls?.
         /// </summary>
         internal static string DeleteDataMsg {
             get {
                 return ResourceManager.GetString("DeleteDataMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Current Ball is deleted successfully..
+        /// </summary>
+        internal static string DeleteSuccessfull {
+            get {
+                return ResourceManager.GetString("DeleteSuccessfull", resourceCulture);
             }
         }
         
@@ -147,6 +183,15 @@ namespace YourSPBall.Resources {
         internal static string No {
             get {
                 return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ok.
+        /// </summary>
+        internal static string OK {
+            get {
+                return ResourceManager.GetString("OK", resourceCulture);
             }
         }
         

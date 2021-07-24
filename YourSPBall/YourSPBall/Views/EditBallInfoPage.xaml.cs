@@ -100,7 +100,7 @@ namespace YourSPBall
                 {
                     if (param.ToLower() == "name")
                     {
-                        string result = await DisplayPromptAsync("YourSPBall", AppResources.EnterName, "Ok", "Cancel", AppResources.NameField, 15, null, SPBall.Name);
+                        string result = await DisplayPromptAsync("YourSPBall", AppResources.EnterName, AppResources.OK, AppResources.Cancel, AppResources.NameField, 15, null, SPBall.Name);
 
                         if (!string.IsNullOrEmpty(result))
                         {
@@ -110,7 +110,7 @@ namespace YourSPBall
                     }
                     else
                     {
-                        string result = await DisplayPromptAsync("YourSPBall", AppResources.EnterSportType, "Ok", "Cancel", AppResources.SportTypeField, 15, null, SPBall.SportType);
+                        string result = await DisplayPromptAsync("YourSPBall", AppResources.EnterSportType, AppResources.OK, AppResources.Cancel, AppResources.SportTypeField, 15, null, SPBall.SportType);
                         if (!string.IsNullOrEmpty(result))
                         {
                             SportType = result;

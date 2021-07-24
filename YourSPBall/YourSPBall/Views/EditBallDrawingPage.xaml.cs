@@ -1,6 +1,7 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using YourSPBall.Models;
+using YourSPBall.Resources;
 
 namespace YourSPBall
 {
@@ -100,10 +101,16 @@ namespace YourSPBall
                 return new Command(() =>
                 {
                     App.IconClicked();
-                    
+
+                    string action = DisplayActionSheet(AppResources.DeleteBallMsg, AppResources.Cancel, null, new string[] { AppResources.No, AppResources.Yes }).Result;
+
+                    if (action != AppResources.Yes)
+                        return;
+
                     if (SPBall.ID > 0)
                         App.Database.DeleteSPBall(SPBall);
 
+                    DisplayAlert("YourSPBall", AppResources.DeleteDataMsg, AppResources.Cancel);
                     App.Current.MainPage = new NavigationPage(new MainMenuPage());
                 });
             }
