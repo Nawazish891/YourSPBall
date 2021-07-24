@@ -1,4 +1,5 @@
-﻿using Plugin.SimpleAudioPlayer;
+﻿using Plugin.SharedTransitions;
+using Plugin.SimpleAudioPlayer;
 using System;
 using System.Globalization;
 using System.IO;
@@ -40,7 +41,7 @@ namespace YourSPBall
 
             if (MuteSound)
                 player.Pause();
-            MainPage = new NavigationPage(new MainMenuPage());
+            MainPage = new SharedTransitionNavigationPage(new MainMenuPage());
         }
 
         public static void IconClicked()

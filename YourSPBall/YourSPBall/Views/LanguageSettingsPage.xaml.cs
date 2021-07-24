@@ -9,6 +9,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using YourSPBall.Resources;
 using YourSPBall.Models;
+using Plugin.SharedTransitions;
 
 namespace YourSPBall
 {
@@ -32,7 +33,7 @@ namespace YourSPBall
                     AppResources.Culture = new CultureInfo(param);
                     _Settings.SelectedLanguageCode = param;
                     App.Database.SaveSettingsAsync(_Settings).Wait();
-                    App.Current.MainPage = new NavigationPage(new MainMenuPage());
+                    App.Current.MainPage = new SharedTransitionNavigationPage(new MainMenuPage());
                 });
             }
         }

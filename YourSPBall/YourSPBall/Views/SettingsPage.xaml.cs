@@ -80,10 +80,11 @@ namespace YourSPBall
                     App.IconClicked();
                     string action = await DisplayActionSheet(AppResources.DeleteDataMsg, null, null, new string[] { AppResources.No, AppResources.Yes });
 
-                    if (action == AppResources.Yes)
-                        await App.Database.DeleteAllSPBalls();
+                    if (action != AppResources.Yes)
+                        return;
 
-                    await DisplayAlert("YourSPBall", AppResources.DeleteAllSuccessfull, AppResources.Cancel);
+                    await App.Database.DeleteAllSPBalls();
+                    await DisplayAlert("YourSPBall", AppResources.DeleteAllSuccessfull, AppResources.OK,AppResources.Cancel);
                 });
             }
         }

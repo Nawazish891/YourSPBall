@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Plugin.SharedTransitions;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using YourSPBall.Models;
 using YourSPBall.Resources;
@@ -98,20 +99,22 @@ namespace YourSPBall
         {
             get
             {
-                return new Command(() =>
+                return new Command(async() =>
                 {
                     App.IconClicked();
+                    if (string.IsNullOrEmpty(SPBall.ImageURL))
+                        return;
 
-                    string action = DisplayActionSheet(AppResources.DeleteBallMsg, AppResources.Cancel, null, new string[] { AppResources.No, AppResources.Yes }).Result;
+                    string action = await DisplayActionSheet(AppResources.DeleteBallMsg, AppResources.Cancel, null, new string[] { AppResources.No, AppResources.Yes });
 
                     if (action != AppResources.Yes)
                         return;
 
                     if (SPBall.ID > 0)
-                        App.Database.DeleteSPBall(SPBall);
+                        await App.Database.DeleteSPBall(SPBall);
 
-                    DisplayAlert("YourSPBall", AppResources.DeleteDataMsg, AppResources.Cancel);
-                    App.Current.MainPage = new NavigationPage(new MainMenuPage());
+                    await DisplayAlert("YourSPBall", AppResources.DeleteDataMsg, AppResources.OK, AppResources.Cancel);
+                    App.Current.MainPage = new SharedTransitionNavigationPage(new MainMenuPage());
                 });
             }
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.SharedTransitions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -128,7 +129,7 @@ namespace YourSPBall
                 {
                     App.IconClicked();
                     App.Database.SaveSPBallAsync(SPBall);
-                    App.Current.MainPage = new NavigationPage(new MainMenuPage());
+                    App.Current.MainPage = new SharedTransitionNavigationPage(new MainMenuPage());
                 });
             }
         }
