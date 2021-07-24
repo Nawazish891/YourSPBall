@@ -37,6 +37,8 @@
     <EnableLLVM>false</EnableLLVM>
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
     <BundleAssemblies>false</BundleAssemblies>
+    <EmbedAssembliesIntoApk>false</EmbedAssembliesIntoApk>
+    <AndroidSupportedAbis />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -60,9 +62,12 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.AndroidX.ExifInterface" Version="1.3.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ImageCropper\ImageCropperImplementation.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="ImageCropper\Platform.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SplashActivity.cs" />
@@ -92,6 +97,10 @@
     <AndroidResource Include="Resources\drawable\btn_right.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Binding\Binding_AndroidImageCropper\Binding_AndroidImageCropper.csproj">
+      <Project>{88654249-5226-44d1-a3d2-952e38a178db}</Project>
+      <Name>Binding_AndroidImageCropper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\YourSPBall\YourSPBall.csproj">
       <Project>{37BEAB37-3A4D-441E-BCAA-8C9F0ECB0E8B}</Project>
       <Name>YourSPBall</Name>
@@ -150,6 +159,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\btn_unmute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\xml\file_paths.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

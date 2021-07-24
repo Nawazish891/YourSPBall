@@ -23,32 +23,19 @@ namespace YourSPBall
             {
                 return new Command(async () => {
                     App.IconClicked();
-                    var result = await DisplayActionSheet("YourSPBall", "Cancel", null, new string[] { AppResources.TakeAPicture, AppResources.ChooseFromLibrary });
-
-                    if (result.ToLower() == AppResources.TakeAPicture.ToLower())
+                    await new YourSPBall.ImageCropper.ImageCropper()
                     {
-                        var result2 = await MediaPicker.CapturePhotoAsync();
-
-                        if (result2 != null)
+                        CropShape = YourSPBall.ImageCropper.ImageCropper.CropShapeType.Oval,
+                        AspectRatioX = 1,
+                        AspectRatioY = 1,
+                        Success = (imageFile) =>
                         {
-                            var stream = await result2.OpenReadAsync();
-
-                            var imageResult = ImageSource.FromStream(() => stream);
+                            Device.BeginInvokeOnMainThread(() =>
+                            {
+                                imgView.Source = ImageSource.FromFile(imageFile);
+                            });
                         }
-                    }
-                    else if (result.ToLower() == AppResources.ChooseFromLibrary.ToLower())
-                    {
-                        var result2 = await MediaPicker.PickPhotoAsync(new MediaPickerOptions
-                        {
-                            Title = AppResources.ChooseFromLibrary
-                        });
-
-                        if (result2 != null)
-                        {
-                            var stream = await result2.OpenReadAsync();
-                            var imageResult = ImageSource.FromStream(() => stream);
-                        }
-                    }
+                    }.Show(this);
                 });
             }
         }

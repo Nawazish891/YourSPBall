@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YourSPBall.Android", "YourSPBall\YourSPBall.Android\YourSPBall.Android.csproj", "{0178F0B0-66D1-4EB0-AEA0-B40D570E7C5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YourSPBall", "YourSPBall\YourSPBall\YourSPBall.csproj", "{35E0DA92-F2C7-42BD-B3D3-016B684DC752}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YourSPBall", "YourSPBall\YourSPBall\YourSPBall.csproj", "{35E0DA92-F2C7-42BD-B3D3-016B684DC752}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BindingLibrary", "BindingLibrary", "{13601909-16AE-4E95-B3A8-F9B2CD4EE601}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding_AndroidImageCropper", "YourSPBall\Binding\Binding_AndroidImageCropper\Binding_AndroidImageCropper.csproj", "{88654249-5226-44D1-A3D2-952E38A178DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,9 +29,16 @@ Global
 		{35E0DA92-F2C7-42BD-B3D3-016B684DC752}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35E0DA92-F2C7-42BD-B3D3-016B684DC752}.Release|Any CPU.Build.0 = Release|Any CPU
 		{35E0DA92-F2C7-42BD-B3D3-016B684DC752}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{88654249-5226-44D1-A3D2-952E38A178DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88654249-5226-44D1-A3D2-952E38A178DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88654249-5226-44D1-A3D2-952E38A178DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88654249-5226-44D1-A3D2-952E38A178DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{88654249-5226-44D1-A3D2-952E38A178DB} = {13601909-16AE-4E95-B3A8-F9B2CD4EE601}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {826AC062-BDA6-46EF-8072-3EE057C5C1E4}
