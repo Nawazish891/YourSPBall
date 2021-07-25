@@ -2,18 +2,12 @@
 using Com.Theartofdev.Edmodo.Cropper;
 using Android.App;
 using Android.Content;
-using Xamarin.Forms;
 using YourSPBall.ImageCropper;
 
 namespace YourSPBall.Droid.ImageCropper
 {
     public class Platform
     {
-        public static void Init()
-        {
-            DependencyService.Register<IImageCropperWrapper, ImageCropperImplementation>();
-        }
-
         public static async void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             if (requestCode == CropImage.CropImageActivityRequestCode)

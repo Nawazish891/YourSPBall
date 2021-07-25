@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using YourSPBall.Models;
 using YourSPBall.Resources;
+using YourSPBall.Views;
 
 namespace YourSPBall
 {
@@ -90,7 +91,7 @@ namespace YourSPBall
                 return new Command(() =>
                 {
                     App.IconClicked();
-
+                    this.Navigation.PushAsync(new SpinPaintScreen(PreviousSPBall));
                 });
             }
         }

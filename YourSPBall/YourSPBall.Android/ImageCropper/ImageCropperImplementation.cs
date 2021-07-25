@@ -4,6 +4,9 @@ using System;
 using YourSPBall.ImageCropper;
 using Android.App;
 using Xamarin.Forms;
+using YourSPBall.Droid.ImageCropper;
+
+[assembly: Dependency(typeof(ImageCropperImplementation))]
 
 namespace YourSPBall.Droid.ImageCropper
 {
