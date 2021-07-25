@@ -49,6 +49,9 @@ namespace YourSPBall.Views
         {
             SKGLView canvasView = new SKGLView();
             bitmap = SKBitmap.Decode(SPBall.ImageURL);
+            bitmap = bitmap.Resize(new SKSizeI(544,544), SKFilterQuality.High);
+            bitmapCanvas = new SKCanvas(bitmap);
+            bitmapCanvas.DrawBitmap(bitmap, 0,0);
             bitmapSize = Math.Min(bitmap.Height, bitmap.Width);
             canvasView.PaintSurface += OnGLViewPaintSurface;
             this.canvasView = canvasView;
@@ -59,7 +62,7 @@ namespace YourSPBall.Views
             Device.StartTimer(TimeSpan.FromMilliseconds(16), OnTimerTick);
         }
         // These should be contrasting colors
-        static readonly SKColor backgroundColor = SKColors.Black;
+        static readonly SKColor backgroundColor = SKColors.Transparent;
         static readonly SKColor crossHairColor = SKColors.Transparent;
 
         // Either SKCanvasView or SKGLView
@@ -257,7 +260,6 @@ namespace YourSPBall.Views
                 bitmap = newBitmap;
                 bitmapCanvas = newBitmapCanvas;
                 bitmapSize = newBitmapSize;
-                //bitmap = bitmap.Resize(new SKSizeI(canvasSize, canvasSize), SKFilterQuality.High);
             }
 
             // Clear the canvas
