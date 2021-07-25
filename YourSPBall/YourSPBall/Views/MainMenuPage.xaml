@@ -27,12 +27,11 @@
                     </Image>
                     <Frame HorizontalOptions="Center" VerticalOptions="Center" Background="#667380" CornerRadius="25" Padding="10" HeightRequest="125" WidthRequest="125">
                         <Frame HorizontalOptions="Center" VerticalOptions="Center" Background="#ffffff" CornerRadius="25"  HeightRequest="125" WidthRequest="125">
-                            <Frame Padding="0" IsClippedToBounds="True" HeightRequest="170" WidthRequest="170" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" CornerRadius="85" HasShadow="False" BackgroundColor="Transparent" Background="Transparent" >
-                                <Frame.GestureRecognizers>
+                            <Image x:Name="imgView" HeightRequest="170" WidthRequest="170" Source="{Binding CurrentBall.ImageURL, Source={x:Reference this}}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Aspect="Fill" >
+                                <Image.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding NavigateToBallDetailCommand,Source={x:Reference this}}"/>
-                                </Frame.GestureRecognizers>
-                                <Image x:Name="imgView" Source="{Binding CurrentBall.ImageURL, Source={x:Reference this}}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit" />
-                            </Frame>
+                                </Image.GestureRecognizers>
+                            </Image>
                         </Frame>
                     </Frame>
                     <Image Source="btn_right.png" HorizontalOptions="End" VerticalOptions="Center" Aspect="AspectFit" >

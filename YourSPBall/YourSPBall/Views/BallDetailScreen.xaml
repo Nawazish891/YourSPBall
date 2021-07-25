@@ -17,9 +17,7 @@
                     </Image.GestureRecognizers>
                 </Image>
                 <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Center" Spacing="15">
-                    <Frame Padding="0" IsClippedToBounds="True" HeightRequest="150" WidthRequest="150" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" CornerRadius="75" HasShadow="False" BackgroundColor="Transparent" Background="Transparent" >
-                        <Image x:Name="imgView" Source="{Binding SPBall.ImageURL, Source={x:Reference this}}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFit" />
-                    </Frame>
+                    <Image x:Name="imgView" HeightRequest="150" WidthRequest="150" Source="{Binding SPBall.ImageURL, Source={x:Reference this}}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Aspect="Fill" />
                     <Grid HorizontalOptions="Center" VerticalOptions="FillAndExpand" ColumnSpacing="50" Margin="30,5" >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>

@@ -36,5 +36,17 @@ namespace YourSPBall.Droid.DependencyService
 
             return filePath;
         }
+
+        public string SavePicture(string name, Android.Graphics.Bitmap data)
+        {
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            documentsPath = Path.Combine(documentsPath, "SPBallImages");
+            Directory.CreateDirectory(documentsPath);
+            string filePath = Path.Combine(documentsPath, name);
+            var stream = new FileStream(filePath, FileMode.Create);
+            data.Compress(Android.Graphics.Bitmap.CompressFormat.Png, 100, stream);
+            stream.Close();
+            return filePath;
+        }
     }
 }
