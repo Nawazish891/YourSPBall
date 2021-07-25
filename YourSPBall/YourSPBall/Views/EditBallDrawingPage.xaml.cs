@@ -113,7 +113,7 @@ namespace YourSPBall
                     if (SPBall.ID > 0)
                         await App.Database.DeleteSPBall(SPBall);
 
-                    await DisplayAlert("YourSPBall", AppResources.DeleteDataMsg, AppResources.OK, AppResources.Cancel);
+                    await DisplayAlert("YourSPBall", AppResources.DeleteSuccessfull, AppResources.OK, AppResources.Cancel);
                     App.Current.MainPage = new SharedTransitionNavigationPage(new MainMenuPage());
                 });
             }
