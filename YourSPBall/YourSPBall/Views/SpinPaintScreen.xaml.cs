@@ -3,13 +3,16 @@ using SkiaSharp.Views.Forms;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using YourSPBall.Interface;
 using YourSPBall.Models;
+using YourSPBall.Resources;
 using YourSPBall.SpinPaint;
 
 namespace YourSPBall.Views
@@ -46,6 +49,7 @@ namespace YourSPBall.Views
         {
             SKGLView canvasView = new SKGLView();
             bitmap = SKBitmap.Decode(SPBall.ImageURL);
+            bitmapSize = Math.Min(bitmap.Height, bitmap.Width);
             canvasView.PaintSurface += OnGLViewPaintSurface;
             this.canvasView = canvasView;
             canvasViewLayout.Children.Add(canvasView);
@@ -230,23 +234,11 @@ namespace YourSPBall.Views
             // These two dimensions should be the same.
             int canvasSize = Math.Min(width, height);
 
-            // If bitmap does not exist, create it
-            if (bitmap == null)
-            {
-                // Set three fields
-                bitmapSize = canvasSize;
-                bitmap = new SKBitmap(bitmapSize, bitmapSize);
-                bitmapCanvas = new SKCanvas(bitmap);
-
-                // Establishes circular clipping and colors background
-                PrepBitmap(bitmapCanvas, bitmapSize);
-            }
-
             // If the canvas has become larger, make a new bitmap of that size.
-            else if (bitmapSize < canvasSize)
+            if (bitmapSize < canvasSize)
             {
                 // New versions of the three fields
-                int newBitmapSize = canvasSize;
+                int newBitmapSize = canvasSize * 2;
                 SKBitmap newBitmap = new SKBitmap(newBitmapSize, newBitmapSize);
                 SKCanvas newBitmapCanvas = new SKCanvas(newBitmap);
 
@@ -265,6 +257,7 @@ namespace YourSPBall.Views
                 bitmap = newBitmap;
                 bitmapCanvas = newBitmapCanvas;
                 bitmapSize = newBitmapSize;
+                //bitmap = bitmap.Resize(new SKSizeI(canvasSize, canvasSize), SKFilterQuality.High);
             }
 
             // Clear the canvas
@@ -281,7 +274,7 @@ namespace YourSPBall.Views
 
             // Draw the bitmap
             float offset = (canvasSize - bitmapSize) / 2f;
-            canvas.DrawBitmap(bitmap,new SKPoint(0,0));
+            canvas.DrawBitmap(bitmap, offset, offset);
 
             // Draw the cross hairs
             canvas.DrawLine(radius, 0, radius, canvasSize, thinLinePaint);
@@ -339,10 +332,16 @@ namespace YourSPBall.Views
         {
             get
             {
-                return new Command(() =>
+                return new Command(async () =>
                 {
                     App.IconClicked();
-                  
+
+                    string action = await DisplayActionSheet(AppResources.ClearPaintMsg, AppResources.Cancel, null, new string[] { AppResources.No, AppResources.Yes });
+
+                    if (action != AppResources.Yes)
+                        return;
+
+                    this.Navigation.PopAsync();
                 });
             }
         }
@@ -354,7 +353,9 @@ namespace YourSPBall.Views
                 return new Command(() =>
                 {
                     App.IconClicked();
-                    
+                    SKData data = SKImage.FromBitmap(bitmap).Encode();
+                    SPBall.ImageURL = DependencyService.Get<IFileService>().SavePicture(SPBall.ImageURL,new MemoryStream(data.ToArray()));
+                    this.Navigation.PopAsync();
                 });
             }
         }

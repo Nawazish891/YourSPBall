@@ -158,4 +158,7 @@
   <data name="DeleteBallMsg" xml:space="preserve">
     <value>Вы уверены, что хотите удалить этот мяч?</value>
   </data>
+  <data name="ClearPaintMsg" xml:space="preserve">
+    <value>Вы уверены, что хотите убрать эту шариковую краску?</value>
+  </data>
 </root>

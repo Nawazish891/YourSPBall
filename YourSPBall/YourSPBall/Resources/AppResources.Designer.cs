@@ -79,6 +79,15 @@ namespace YourSPBall.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to clear this ball paint?.
+        /// </summary>
+        internal static string ClearPaintMsg {
+            get {
+                return ResourceManager.GetString("ClearPaintMsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CREATE NEW BALL.
         /// </summary>
         internal static string CreateNewBall {

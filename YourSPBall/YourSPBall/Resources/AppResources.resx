@@ -177,4 +177,7 @@
   <data name="DeleteBallMsg" xml:space="preserve">
     <value>Are you sure you want to delete this ball?</value>
   </data>
+  <data name="ClearPaintMsg" xml:space="preserve">
+    <value>Are you sure you want to clear this ball paint?</value>
+  </data>
 </root>
