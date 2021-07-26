@@ -1,4 +1,5 @@
 ﻿using Plugin.SharedTransitions;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using YourSPBall.Models;
@@ -68,6 +69,30 @@ namespace YourSPBall
                 return new Command(async () =>
                 {
                     App.IconClicked();
+                    PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.Camera>();
+                    if(status != PermissionStatus.Granted)
+                    {
+                        status = await Permissions.RequestAsync<Permissions.Camera>();
+                        if (status != PermissionStatus.Granted)
+                            return;
+                    }
+
+                    status = await Permissions.CheckStatusAsync<Permissions.StorageWrite>();
+                    if (status != PermissionStatus.Granted)
+                    {
+                        status = await Permissions.RequestAsync<Permissions.StorageWrite>();
+                        if (status != PermissionStatus.Granted)
+                            return;
+                    }
+
+                    status = await Permissions.CheckStatusAsync<Permissions.StorageRead>();
+                    if (status != PermissionStatus.Granted)
+                    {
+                        status = await Permissions.RequestAsync<Permissions.StorageRead>();
+                        if (status != PermissionStatus.Granted)
+                            return;
+                    }
+
                     await new YourSPBall.ImageCropper.ImageCropper()
                     {
                         CropShape = YourSPBall.ImageCropper.ImageCropper.CropShapeType.Oval,
