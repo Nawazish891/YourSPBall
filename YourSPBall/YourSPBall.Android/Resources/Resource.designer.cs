@@ -18907,13 +18907,22 @@ namespace YourSPBall.Droid
 			public const int appicon = 2131558400;
 			
 			// aapt resource value: 0x7F0D0001
-			public const int icon = 2131558401;
+			public const int appicon_background = 2131558401;
 			
 			// aapt resource value: 0x7F0D0002
-			public const int icon_round = 2131558402;
+			public const int appicon_foreground = 2131558402;
 			
 			// aapt resource value: 0x7F0D0003
-			public const int launcher_foreground = 2131558403;
+			public const int appicon_round = 2131558403;
+			
+			// aapt resource value: 0x7F0D0004
+			public const int icon = 2131558404;
+			
+			// aapt resource value: 0x7F0D0005
+			public const int icon_round = 2131558405;
+			
+			// aapt resource value: 0x7F0D0006
+			public const int launcher_foreground = 2131558406;
 			
 			static Mipmap()
 			{
